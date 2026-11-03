@@ -1,0 +1,713 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="img/icon1.ico">
+<title>Deepshika Arasu · தீப்ஷிகா அரசு</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Deepshika Arasu: EU project and strategy in biotech, research background in stem cells and bioprinting, and the tools I make.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..600,50..100;1,9..144,300..600,50..100&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Noto+Serif+Tamil:wght@400;500&display=swap">
+<style>
+[hidden] { display: none !important; }
+img { max-width: 100%; }
+body { margin: 0; }
+html { scroll-behavior: smooth; }
+/* Layout: one reading column on warm white. Artwork = generated neuron line drawings (aubergine branches, saffron cell bodies). Three views: home, #map, #press. */
+:root {
+  --paper: #FFFDF9;
+  --paper-2: #F6F0F5;
+  --card: #FFFFFF;
+  --land: #ECE5EB;
+  --ink: #1E1A22;
+  --ink-soft: #625A66;
+  --line: rgba(30, 26, 34, 0.14);
+  --aub: #5B2A5E;
+  --aub-soft: #9A6A9C;
+  --saffron: #D9B740;
+  --saffron-ink: #7D6A0E;
+  --saffron-soft: #F3EEC6;
+  --scope: #10121A;
+  --logo-bg: #FFFFFF;
+  --logo-ink: #3A3340;
+  --art-alpha: 0.22;
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-body: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --measure: 62ch;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #1C1220; --paper-2: #26192A; --card: #2A1C2F; --land: #36283A; --ink: #F5EDF3; --ink-soft: #BCAABB;
+    --line: rgba(245, 237, 243, 0.14); --aub: #DDAEDF; --aub-soft: #A97BAB; --saffron: #E3C85C; --saffron-ink: #E3C85C; --saffron-soft: #343019;
+    --art-alpha: 0.3; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #1C1220; --paper-2: #26192A; --card: #2A1C2F; --land: #36283A; --ink: #F5EDF3; --ink-soft: #BCAABB;
+  --line: rgba(245, 237, 243, 0.14); --aub: #DDAEDF; --aub-soft: #A97BAB; --saffron: #E3C85C; --saffron-ink: #E3C85C; --saffron-soft: #343019;
+  --art-alpha: 0.3; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  overflow-x: hidden;
+}
+.wrap { position: relative; max-width: 1080px; margin: 0 auto; }
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--saffron); outline-offset: 3px; border-radius: 2px; }
+.mono { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.04em; color: var(--ink-soft); }
+
+/* neuron artwork canvases */
+canvas.neuron { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; display: block; }
+
+/* nav */
+header.top { position: relative; z-index: 2; display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; padding-block: 28px 0; }
+.name { font-family: var(--font-display); font-size: 1.25rem; font-weight: 500; text-decoration: none; font-variation-settings: "SOFT" 100; }
+.name::before { content: ""; display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: var(--saffron); margin-right: 8px; vertical-align: 2px; }
+nav { display: flex; gap: 20px; flex-wrap: wrap; font-size: 0.95rem; align-items: baseline; }
+nav a { text-decoration: none; color: var(--ink-soft); }
+nav a:hover, nav a[aria-current="page"] { color: var(--ink); }
+nav a.tab { border: 1px solid var(--line); border-radius: 999px; padding: 2px 12px; }
+nav a.tab[aria-current="page"] { border-color: var(--aub); color: var(--aub); }
+
+/* hand-drawn squiggle underline */
+.squiggle { position: relative; text-decoration: none; padding-bottom: 6px; display: inline-block; }
+.squiggle::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 5px; background: var(--aub);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='6' viewBox='0 0 24 6'%3E%3Cpath d='M0 3 Q 3 0 6 3 T 12 3 T 18 3 T 24 3' fill='none' stroke='black' stroke-width='1.4'/%3E%3C/svg%3E") repeat-x 0 0 / 18px 5px;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='6' viewBox='0 0 24 6'%3E%3Cpath d='M0 3 Q 3 0 6 3 T 12 3 T 18 3 T 24 3' fill='none' stroke='black' stroke-width='1.4'/%3E%3C/svg%3E") repeat-x 0 0 / 18px 5px;
+}
+.squiggle:hover::after { background: var(--saffron); -webkit-mask-size: 12px 5px; mask-size: 12px 5px; }
+
+/* hero */
+.hero { position: relative; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 48px; align-items: center; padding-block: 72px 56px; }
+.hero .art { position: absolute; left: -8%; top: -40px; width: 70%; height: calc(100% + 40px); }
+.hero-text { position: relative; min-width: 0; }
+h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(2.4rem, 5.6vw, 4.2rem); line-height: 1.04; letter-spacing: -0.015em; margin: 0 0 22px; text-wrap: balance; font-variation-settings: "SOFT" 100, "opsz" 144; }
+h1 em { font-style: italic; color: var(--aub); }
+h1 .hl { background: linear-gradient(transparent 62%, var(--saffron-soft) 62%, var(--saffron-soft) 92%, transparent 92%); }
+.lede { max-width: 44ch; color: var(--ink-soft); font-size: 1.125rem; margin: 0 0 28px; }
+.hero-cta { display: flex; gap: 24px; flex-wrap: wrap; align-items: baseline; }
+
+/* collage */
+figure { margin: 0; }
+figcaption { margin-top: 10px; }
+.collage { position: relative; max-width: 460px; justify-self: end; width: 100%; }
+.collage .frame { position: relative; padding: 0 0 16% 16%; }
+.plate { position: relative; aspect-ratio: 1 / 1; max-width: 100%; border-radius: 3px; overflow: hidden; background: var(--scope); transform: rotate(1.6deg); box-shadow: 10px 10px 0 var(--saffron); }
+.plate img, .plate canvas { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.portrait { position: absolute; left: 0; bottom: 0; width: 46%; aspect-ratio: 3 / 4; max-width: 100%; border-radius: 999px 999px 6px 6px; overflow: hidden; border: 6px solid var(--paper); background: var(--paper-2); transform: rotate(-2.5deg); display: grid; place-items: center; }
+.portrait img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 28%; }
+.ph { font-family: var(--font-mono); font-size: 0.66rem; color: var(--ink-soft); letter-spacing: 0.05em; }
+
+/* sections */
+section { padding-block: 56px; border-top: 1px solid var(--line); position: relative; }
+.sec-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-bottom: 32px; }
+h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.7rem, 3.2vw, 2.3rem); line-height: 1.15; margin: 0; text-wrap: balance; font-variation-settings: "SOFT" 100; }
+h3 { font-family: var(--font-display); font-weight: 500; font-size: 1.3rem; line-height: 1.25; margin: 0; text-wrap: balance; }
+.eyebrow { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.04em; color: var(--saffron-ink); margin: 0 0 6px; }
+
+/* now */
+.now { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: 48px; }
+.now p { margin: 0 0 16px; max-width: var(--measure); }
+.now .meta { display: flex; flex-direction: column; gap: 14px; }
+.now dl { margin: 0; display: grid; gap: 14px; }
+.now dt { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); }
+.now dd { margin: 2px 0 0; }
+
+.name .tamil { font-family: "Noto Serif Tamil", "Latha", "Tamil Sangam MN", serif; font-size: 0.82em; font-weight: 400; color: var(--aub); margin-left: 8px; }
+
+/* about */
+.about { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 56px; align-items: start; }
+.about-text { min-width: 0; }
+.about-text h2 { margin-bottom: 24px; }
+.about-text p { margin: 0 0 16px; max-width: var(--measure); }
+.about-text p.opening { font-family: var(--font-display); font-size: 1.35rem; line-height: 1.45; font-variation-settings: "SOFT" 100; }
+.about-text a { text-decoration-color: var(--saffron); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+.langs { list-style: none; margin: 4px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.langs li { display: flex; align-items: baseline; gap: 6px; padding: 4px 12px; border: 1px solid var(--line); border-radius: 999px; font-size: 0.95rem; }
+.langs .lvl { font-family: var(--font-mono); font-size: 0.68rem; color: var(--saffron-ink); }
+.pinned { position: relative; margin: 8px 0 0; background: var(--card); border: 1px solid var(--line); padding: 12px 12px 14px; transform: rotate(1.8deg); }
+.pinned .tape { position: absolute; top: -11px; left: 50%; width: 92px; height: 22px; margin-left: -46px; opacity: 0.6; transform: rotate(-4deg); background: var(--saffron); }
+.pinned figcaption { margin-top: 10px; }
+.canvas-ph { position: relative; max-width: 100%; background: var(--paper-2); display: grid; place-items: center; overflow: hidden; }
+.canvas-ph img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.r-45 { aspect-ratio: 4 / 5; }
+
+/* projects */
+.work { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 48px 28px; }
+.piece { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.cover { position: relative; aspect-ratio: 4 / 3; max-width: 100%; border-radius: 3px; overflow: hidden; background: var(--scope); }
+.cover img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.cover.fit { background: #FFFFFF; border: 1px solid var(--line); }
+.cover.fit img { object-fit: contain; padding: 8px; }
+.cover .ph { position: absolute; left: 12px; bottom: 10px; }
+.piece .where { margin: 6px 0 0; color: var(--saffron-ink); }
+.piece .adv { margin: 0; color: var(--ink-soft); font-size: 0.95rem; }
+.piece ul { margin: 2px 0 0; padding-left: 1.1em; color: var(--ink-soft); font-size: 0.95rem; display: grid; gap: 4px; }
+.piece ul li::marker { color: var(--aub-soft); }
+.piece .badge { align-self: flex-start; font-family: var(--font-mono); font-size: 0.7rem; padding: 2px 8px; border-radius: 999px; background: var(--saffron-soft); color: var(--saffron-ink); }
+.piece .cover { transition: transform 300ms ease; }
+.piece:hover .cover { transform: rotate(-0.8deg) scale(1.01); }
+
+/* background timeline with institution icons */
+.path { list-style: none; margin: 0; padding: 0; max-width: 860px; }
+.path li { display: grid; grid-template-columns: 8.5rem 4.5rem minmax(0, 1fr); gap: 20px; align-items: start; padding-block: 20px; border-bottom: 1px dashed var(--line); }
+.path li:last-child { border-bottom: 0; }
+.path .when { font-family: var(--font-mono); font-size: 0.78rem; color: var(--ink-soft); padding-top: 14px; font-variant-numeric: tabular-nums; }
+.logos { display: flex; }
+.logos .logo + .logo { margin-left: -14px; }
+.logo { position: relative; width: 52px; height: 52px; flex: none; border-radius: 50%; background: var(--logo-bg); border: 1px solid var(--line); overflow: hidden; display: grid; place-items: center; }
+.logo .ini { font-family: var(--font-mono); font-size: 0.62rem; font-weight: 500; letter-spacing: 0.02em; color: var(--logo-ink); text-align: center; line-height: 1.1; padding: 0 4px; }
+.logo img + .ini { display: none; }
+.logo img { position: absolute; inset: 6px; width: calc(100% - 12px); height: calc(100% - 12px); object-fit: contain; background: var(--logo-bg); }
+.path h3 { font-size: 1.15rem; padding-top: 4px; }
+.path p { margin: 4px 0 0; color: var(--ink-soft); font-size: 0.98rem; max-width: var(--measure); }
+
+/* contact: a painting as the background, details on a card */
+.contact { padding-block: 56px; }
+.contact-band { position: relative; border-radius: 3px; overflow: hidden; background: var(--paper-2); min-height: 400px; display: flex; align-items: center; padding: clamp(28px, 6vw, 72px) clamp(16px, 5vw, 56px); }
+.contact-band > img.bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.contact-band .bg-label { position: absolute; right: 14px; bottom: 10px; }
+.contact-inner { position: relative; max-width: 560px; background: var(--card); border: 1px solid var(--line); padding: clamp(22px, 4vw, 36px); }
+.contact p { color: var(--ink-soft); margin: 14px 0 24px; max-width: 48ch; }
+.email-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.email { font-family: var(--font-display); font-size: clamp(1.3rem, 3vw, 1.8rem); user-select: all; word-break: break-all; }
+button.copy { font: 500 0.85rem var(--font-body); color: var(--ink); background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; cursor: pointer; }
+button.copy:hover { border-color: var(--aub); color: var(--aub); }
+.links { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 24px; }
+
+/* shared view header */
+.view { padding-block: 56px 40px; border-top: 0; position: relative; }
+.view .intro { max-width: 52ch; color: var(--ink-soft); margin: 12px 0 0; }
+
+/* map */
+.world { margin-top: 32px; position: relative; }
+.world svg, .europe svg { width: 100%; height: auto; display: block; overflow: visible; }
+.land { fill: var(--land); stroke: var(--paper); stroke-width: 0.5; }
+.hl-c { stroke-width: 0.8; fill-opacity: 0.8; transition: fill-opacity 200ms ease; cursor: pointer; }
+.hl-c.focus { fill-opacity: 1; stroke: var(--ink) !important; stroke-width: 1.2; }
+.city { fill: var(--ink); stroke: var(--paper); stroke-width: 1.5; }
+.city-label { font-family: var(--font-mono); font-size: 13px; fill: var(--ink); paint-order: stroke; stroke: var(--paper-2); stroke-width: 4px; stroke-linejoin: round; }
+.map-lower { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px; margin-top: 40px; align-items: start; }
+.europe { background: var(--paper-2); border-radius: 3px; padding: 12px; }
+.places { list-style: none; margin: 0; padding: 0; }
+.places li { border-bottom: 1px dashed var(--line); }
+.places button { all: unset; box-sizing: border-box; width: 100%; cursor: pointer; display: grid; grid-template-columns: 14px minmax(0, 1fr) auto; gap: 14px; align-items: start; padding-block: 14px; }
+.places button:focus-visible { outline: 2px solid var(--saffron); outline-offset: 2px; }
+.places .dot { width: 14px; height: 14px; border-radius: 50%; margin-top: 6px; }
+.places .country { font-family: var(--font-display); font-size: 1.15rem; font-weight: 500; }
+.places .where { display: block; color: var(--ink-soft); font-size: 0.95rem; }
+.places .yrs { font-family: var(--font-mono); font-size: 0.75rem; color: var(--ink-soft); padding-top: 6px; font-variant-numeric: tabular-nums; }
+.places button:hover .country, .places button.focus .country { color: var(--aub); }
+.map-msg { padding: 40px 0; color: var(--ink-soft); }
+
+/* press clippings */
+.clips { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 44px 28px; margin-top: 48px; }
+.clip { position: relative; background: var(--card); border: 1px solid var(--line); padding: 30px 22px 20px; display: flex; flex-direction: column; gap: 10px; transform: rotate(-0.6deg); }
+.clip:nth-child(even) { transform: rotate(0.5deg); }
+.clip:nth-child(3n) { transform: rotate(-0.2deg); }
+.clip .tape { position: absolute; top: -11px; left: 50%; width: 88px; height: 22px; margin-left: -44px; opacity: 0.55; transform: rotate(-3deg); background: var(--saffron); }
+.clip:nth-child(even) .tape { transform: rotate(4deg); background: var(--aub-soft); }
+.clip .src { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--saffron-ink); }
+.clip h3 { font-size: 1.22rem; }
+.clip p { margin: 0; color: var(--ink-soft); font-size: 0.98rem; }
+.clip .foot { margin-top: auto; padding-top: 10px; display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.clip.video h3::before { content: ""; display: inline-block; width: 0; height: 0; border-left: 11px solid var(--aub); border-top: 7px solid transparent; border-bottom: 7px solid transparent; margin-right: 8px; vertical-align: 1px; }
+
+footer { padding-block: 28px 40px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+@media (max-width: 860px) {
+  .hero { grid-template-columns: minmax(0, 1fr); padding-block: 48px 40px; gap: 36px; }
+  .hero .art { width: 100%; left: -10%; height: 70%; }
+  .collage { justify-self: start; max-width: 400px; }
+  .now, .about { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .pinned { max-width: 360px; }
+  .work, .clips { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .map-lower { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 560px) {
+  .work, .clips { grid-template-columns: minmax(0, 1fr); }
+  .path li { grid-template-columns: 52px minmax(0, 1fr); gap: 4px 16px; }
+  .path .when { grid-column: 1 / -1; padding-top: 0; }
+  nav { gap: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .piece .cover, .hl-c { transition: none; }
+  .piece:hover .cover { transform: none; }
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="paint" x="-5%" y="-5%" width="110%" height="110%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.06" numOctaves="2" seed="3" result="t"/>
+    <feDisplacementMap in="SourceGraphic" in2="t" scale="3" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</svg>
+
+<div class="wrap">
+  <header class="top">
+    <a class="name" href="#top">Deepshika Arasu <span class="tamil" lang="ta">தீப்ஷிகா அரசு</span></a>
+    <nav aria-label="Main">
+      <a href="#now">Now</a>
+      <a href="#about">About me</a>
+      <a href="#work">Projects</a>
+      <a href="#background">Background</a>
+      <a class="tab" href="#map">Map</a>
+      <a class="tab" href="#press">Blowing my own trumpet</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="view-home">
+    <div class="hero" id="top">
+      <canvas class="neuron art" data-seed="21" data-sx="0.22" data-sy="0.55" data-reach="0.5" data-alpha="art" aria-hidden="true"></canvas>
+      <div class="hero-text">
+        <p class="eyebrow">Strategy · biotech analyst · neuroscience</p>
+        <h1>From neurons under the microscope to <em>Europe's <span class="hl">bioeconomy.</span></em></h1>
+        <p class="lede">I lead EU project strategy at INRAE, after a PhD in stem cells and bioprinting. Here you can find my research projects, talks and writing, and a few of my paintings.</p>
+        <div class="hero-cta">
+          <a class="squiggle" href="#work">See my projects</a>
+          <a class="squiggle" href="#press">Where I've been featured</a>
+        </div>
+      </div>
+      <figure class="collage">
+        <div class="frame">
+          <div class="plate">
+            <img class="opt" src="img/mouseneuronalspheroid.jpeg" alt="Confocal image of a mouse neuronal spheroid stained for GABA">
+          </div>
+          <div class="portrait">
+            <span class="ph">YOUR PHOTO</span>
+            <img class="opt" src="img/Deepshika.jpeg" alt="Portrait of Deepshika Arasu">
+          </div>
+        </div>
+        <figcaption class="mono">Fig. 1 · Me, and a mouse neuronal spheroid stained for GABA.</figcaption>
+      </figure>
+    </div>
+
+    <section id="now" aria-labelledby="now-h">
+      <div class="now">
+        <div class="meta">
+          <h2 id="now-h">Now</h2>
+          <dl>
+            <div><dt>Role</dt><dd>EU Project and Strategy Manager</dd></div>
+            <div><dt>Where</dt><dd>INRAE, Laboratoire de Biotechnologie de l'Environnement, Narbonne</dd></div>
+            <div><dt>Project</dt><dd>Horizon Europe BIOLEAD, 2026 to 2029</dd></div>
+          </dl>
+        </div>
+        <div>
+          <p>I coordinate strategy on BIOLEAD, a Horizon Europe project building a shared policy roadmap for bio-based solutions and a climate-neutral bioeconomy in Europe. My work sits between researchers, industry and policymakers: turning lab results into positions, partnerships and plans that funders can act on.</p>
+          <p>Before this I spent five years at the bench and in EU consortia, coordinating work across the EIC Pathfinder project 4DBR and the Marie Curie network ASCTN.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" aria-labelledby="about-h">
+      <div class="about">
+        <div class="about-text">
+          <h2 id="about-h">About me</h2>
+          <p class="opening">“Deepshika” in Sanskrit translates to “the light of a flame from a lamp”, it signifies the presence of light as knowledge and truly; I derive the greatest joy in pursuing knowledge and using it to create change.</p>
+          <p>I am passionate about biology and harnessing engineering technology to implement solutions in healthcare and biotech. Broadly, I am interested in science, technology, policy, equity (financial and otherwise) and how these aspects synergestically impact the real world. I have had the opportunity to travel around the world during the course of my training, which informs my interest in understanding cultures. When not discussing science, you can find me sampling different cuisines, painting or reading a book on the way to a nearby hike.</p>
+          <p>I am also a polyglot of sorts: I speak Tamil, Telugu, Hindi, English and French, and I have A1 in German.</p>
+          <ul class="langs" aria-label="Languages I speak">
+            <li lang="ta">தமிழ்</li>
+            <li lang="te">తెలుగు</li>
+            <li lang="hi">हिन्दी</li>
+            <li lang="en">English</li>
+            <li lang="fr">Français</li>
+            <li lang="de">Deutsch <span class="lvl">A1</span></li>
+          </ul>
+        </div>
+        <figure class="pinned">
+          <span class="tape" aria-hidden="true"></span>
+          <div class="canvas-ph r-45"><span class="ph">YOUR WATERCOLOUR</span><img class="opt" src="img/paintings/painting-1.jpg" alt="Watercolour painting by Deepshika Arasu"></div>
+          <figcaption class="mono">Watercolour by me · title, year</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="work" aria-labelledby="work-h">
+      <div class="sec-head">
+        <h2 id="work-h">Projects</h2>
+        <span class="mono">Research, 2017 to 2025</span>
+      </div>
+      <div class="work">
+        <article class="piece">
+          <div class="cover "><span class="ph">PROJECT IMAGE</span><img class="opt" src="img/mouseneuronalspheroid.jpeg" alt="Confocal image of a neuronal spheroid"></div>
+          <p class="where mono">Poietis, France · University of Barcelona · May 2021 – 2025</p>
+          <h3>Laser assisted bioprinting of neuronal organoids</h3>
+          <ul><li>Marie Curie ITN PhD candidate, Advanced Stem Cell Technologies in Neurology.</li><li>Developing human pluripotent stem cell based bioprinting methods.</li></ul>
+        </article>
+        <article class="piece">
+          <div class="cover "><span class="ph">PROJECT IMAGE</span><img class="opt" src="img/introbg1.jpg" alt="Immunostained iPSC-derived neurons"></div>
+          <p class="where mono">VU Amsterdam · January – August 2020</p>
+          <h3>Assessing synaptic phenotype of STXBP1 syndrome in isogenic iPSC-derived neurons</h3>
+          <ul><li>Patch clamp electrophysiology on STXBP1(+/+) and STXBP1(-/-) iPSC-derived NGN2 neurons.</li><li>Investigated using immunostaining, protein quantification and confocal microscopy.</li></ul>
+        </article>
+        <article class="piece">
+          <div class="cover "><span class="ph">PROJECT IMAGE</span><img class="opt" src="img/labrotation2.jpg" alt="RNAscope image of mouse tissue"></div>
+          <p class="where mono">Charité Berlin · July – August 2019</p>
+          <h3>Establishing RNAscope ISH and detection of Lin41 and FoxJ1 mRNA in mouse development</h3>
+          <ul><li>Established the RNAscope method and optimised the workflow.</li><li>Analysed Lin41 and FoxJ1 mRNA in mouse tissue at E9.5, E14, P1 and P28.</li><li>Implemented ImageJ macros and streamlined data analysis.</li></ul>
+        </article>
+        <article class="piece">
+          <div class="cover fit"><span class="ph">PROJECT IMAGE</span><img class="opt" src="img/labrotation1.jpg" alt="Multi-electrode array recordings"></div>
+          <p class="where mono">Charité Berlin · February – March 2019</p>
+          <h3>Effect of KCC2 modulation on the excitability of rat and human neocortex tissue using multi-electrode arrays</h3>
+          <ul><li>Set up MEA equipment in the lab.</li><li>Tested the action of VU0463271 and CLP257 on neocortical slices.</li><li>Optimised recording times and characterised ictal-like events and inter-ictal discharges.</li></ul>
+        </article>
+        <article class="piece">
+          <div class="cover fit"><span class="ph">PROJECT IMAGE</span><img class="opt" src="img/bachelorthesis.jpg" alt="Diagram of the mass-spectrometry analysis workflow"></div>
+          <p class="where mono">NIT Warangal · January – May 2018</p>
+          <h3>Premalignant pancreatic cancer detection using mass-spectrometry data by computational methods</h3>
+          <ul><li>Compared classification of data using KNN, NNA, DTA and SVM methods.</li></ul>
+        </article>
+        <article class="piece">
+          <div class="cover fit"><span class="ph">PROJECT IMAGE</span><img class="opt" src="img/surf.jpg" alt="Confocal images of presynaptic markers"></div>
+          <p class="where mono">Caltech · Summer 2017</p>
+          <h3>Presynaptic targeting of the ligand in TRACT systems</h3>
+          <span class="badge">Khorana Scholarship</span>
+          <ul><li>Tested three presynaptic markers and calculated their efficiency in tracing neuronal connections.</li><li>Performed confocal microscopy and assisted in molecular biology validation.</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="background" aria-labelledby="bg-h">
+      <div class="sec-head"><h2 id="bg-h">Background</h2></div>
+      <ol class="path">
+        <li>
+          <span class="when">2026 →</span>
+          <div class="logos"><span class="logo"><img src="img/timeline/inrae.png" alt="INRAE"><span class="ini">INRAE</span></span></div>
+          <div><h3>EU Project and Strategy Manager, INRAE</h3><p>Strategy lead on Horizon Europe BIOLEAD, LBE Narbonne.</p></div>
+        </li>
+        <li>
+          <span class="when">2025 – 2026</span>
+          <div class="logos"><span class="logo"><img src="img/timeline/biotis.png" alt="BioTis, Inserm U1026"><span class="ini">BioTis</span></span></div>
+          <div><h3>Research Engineer, BioTis (Inserm U1026)</h3><p>Tissue bioengineering laboratory, Inserm and Université de Bordeaux. Worked on the EU projects Force Repair and 4DBR.</p></div>
+        </li>
+        <li>
+          <span class="when">2021 – 2025</span>
+          <div class="logos"><span class="logo"><img src="img/timeline/ub.png" alt="University of Barcelona"><span class="ini">UB</span></span></div>
+          <div><h3>PhD in Biomedicine, University of Barcelona</h3><p>Industrial doctorate at Poietis as a Marie Curie fellow (ASCTN). Laser-assisted bioprinting of stem-cell-derived neuronal organoids. Project head for 4DBR.</p></div>
+        </li>
+        <li>
+          <span class="when">2018 – 2020</span>
+          <div class="logos"><span class="logo"><img src="img/timeline/VU.jpg" alt="VU Amsterdam"><span class="ini">VU</span></span><span class="logo"><img src="img/timeline/Charite-1.jpg" alt="Charité Berlin"><span class="ini">Charité</span></span></div>
+          <div><h3>M.Sc. Neuroscience, Neurasmus</h3><p>Charité Berlin and VU Amsterdam. Patch-clamp electrophysiology on iPSC-derived neurons, multi-electrode arrays, RNAscope.</p></div>
+        </li>
+        <li>
+          <span class="when">2017</span>
+          <div class="logos"><span class="logo"><img src="img/timeline/caltech_pic.png" alt="Caltech"><span class="ini">Caltech</span></span></div>
+          <div><h3>Khorana Scholar, Caltech</h3><p>Neural circuit tracing in the lab of Carlos Lois.</p></div>
+        </li>
+        <li>
+          <span class="when">2014 – 2018</span>
+          <div class="logos"><span class="logo"><img src="img/timeline/nitw.png" alt="NIT Warangal"><span class="ini">NITW</span></span></div>
+          <div><h3>B.Tech. Biotechnology, NIT Warangal</h3><p>Thesis on detecting premalignant pancreatic cancer from mass-spectrometry data.</p></div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-h">
+      <div class="contact-band">
+        <span class="bg-label ph">YOUR ACRYLIC OR WATERCOLOUR · BACKGROUND</span>
+        <img class="opt bg" src="img/paintings/painting-2.jpg" alt="" aria-hidden="true">
+      <div class="contact-inner">
+        <h2 id="contact-h">Reach out to me</h2>
+        <p>Projects, partnerships, EU proposals, or a conversation about science and policy. Email is the quickest way to reach me.</p>
+        <div class="email-row">
+          <span class="email" id="email">deepshika96@gmail.com</span>
+          <button class="copy" id="copy-email" type="button">Copy address</button>
+        </div>
+        <div class="links">
+          <a class="squiggle" href="mailto:deepshika96@gmail.com">Email me</a>
+          <a class="squiggle" href="https://www.linkedin.com/in/deepshika-arasu/">LinkedIn</a>
+          <a class="squiggle" href="https://github.com/deepshika96">GitHub</a>
+        </div>
+      </div>
+      </div>
+    </section>
+  </main>
+
+  <main id="view-map" hidden>
+    <section class="view" aria-labelledby="map-h">
+      <p class="eyebrow">Six countries since 2014</p>
+      <h2 id="map-h">Where I've worked</h2>
+      <p class="intro">Labs, universities and institutes across three continents. Hover a country or a place in the list to see what I did there.</p>
+      <div class="world" id="world"><svg viewBox="0 0 960 470" role="img" aria-label="World map highlighting the countries Deepshika has worked in"></svg></div>
+      <div class="map-lower">
+        <figure class="europe" id="europe">
+          <svg viewBox="0 0 600 480" role="img" aria-label="Close-up of Europe with cities marked"></svg>
+          <figcaption class="mono">Europe, close up</figcaption>
+        </figure>
+        <ul class="places" id="places"></ul>
+      </div>
+      <p class="map-msg" id="map-msg" hidden>The map couldn't load here. It will appear once the site is online.</p>
+    </section>
+  </main>
+
+  <main id="view-press" hidden>
+    <section class="view" aria-labelledby="press-h">
+      <p class="eyebrow">Talks, press and consortium news</p>
+      <h2 id="press-h">Blowing my own trumpet</h2>
+      <p class="intro">Talks I've given, articles I've been featured in, and things I've written.</p>
+      <div class="clips">
+        <article class="clip video">
+          <span class="tape" aria-hidden="true"></span>
+          <span class="src">Science Summit · Talk</span>
+          <h3>Breaking the Wall of Huntington's Incurability</h3>
+          <p>My Falling Walls talk on bioprinting brain organoids to find new routes to treating Huntington's disease.</p>
+          <div class="foot"><span class="mono">2024</span><a class="squiggle" href="https://www.youtube.com/watch?v=p_HwtuU6Gi4">Watch</a></div>
+        </article>
+        <article class="clip">
+          <span class="tape" aria-hidden="true"></span>
+          <span class="src">Falling Walls · Speaker</span>
+          <h3>Falling Walls Lab speaker profile</h3>
+          <p>Profile on bioprinting brain organoids to model neurological disorders, leading 4DBR, and open science.</p>
+          <div class="foot"><span class="mono">2024</span><a class="squiggle" href="https://falling-walls.com/de/foundation/people/deepshika-arasu">Read</a></div>
+        </article>
+        <article class="clip">
+          <span class="tape" aria-hidden="true"></span>
+          <span class="src">Poietis · Conference</span>
+          <h3>Poster at the French Society for Stem Cell Research</h3>
+          <p>Presenting laser-assisted bioprinting of hPSCs that differentiate to neuronal lineages.</p>
+          <div class="foot"><span class="mono">January 2024</span><a class="squiggle" href="https://www.poietis.com/the-french-society-for-stem-cell-research/">Read</a></div>
+        </article>
+        <article class="clip">
+          <span class="tape" aria-hidden="true"></span>
+          <span class="src">Poietis · 4DBR</span>
+          <h3>Poietis joins the 4-DBR project</h3>
+          <p>News on the EIC Pathfinder project for neurodegenerative disorders, where I represented Poietis in the consortium.</p>
+          <div class="foot"><span class="mono">January 2024</span><a class="squiggle" href="https://www.poietis.com/poietis-partners-in-the-groundbreaking-4-dbr-project/">Read</a></div>
+        </article>
+        <article class="clip">
+          <span class="tape" aria-hidden="true"></span>
+          <span class="src">El·lipse, PRBB · Feature</span>
+          <h3>A pioneering course on brain organoids</h3>
+          <p>Coverage of the first brain organoid course at the CRG in Barcelona, where I was one of sixteen participants.</p>
+          <div class="foot"><span class="mono">October 2023</span><a class="squiggle" href="https://ellipse.prbb.org/exploring-brain-complexity-a-pioneering-course-on-brain-organoids/">Read</a></div>
+        </article>
+        <article class="clip">
+          <span class="tape" aria-hidden="true"></span>
+          <span class="src">ASCTN · Written by me</span>
+          <h3>Knock, Knock! Who is there? Open science!</h3>
+          <p>A post for early-career researchers on practising open science at every stage of a project.</p>
+          <div class="foot"><span class="mono">ASCTN blog</span><a class="squiggle" href="https://www.asctn-training.net/post/knock-knock-who-is-there-open-science">Read</a></div>
+        </article>
+        <article class="clip">
+          <span class="tape" aria-hidden="true"></span>
+          <span class="src">Bordeaux Neurocampus · Organiser</span>
+          <h3>Open science workshop</h3>
+          <p>A workshop on open science practices for researchers, which I organised at Bordeaux Neurocampus.</p>
+          <div class="foot"><span class="mono">Bordeaux</span><a class="squiggle" href="https://www.bordeaux-neurocampus.fr/en/event/workshop-open-science/">Event page</a></div>
+        </article>
+        <article class="clip">
+          <span class="tape" aria-hidden="true"></span>
+          <span class="src">Neurasmus · Alumni</span>
+          <h3>Neurasmus alumni profile</h3>
+          <p>From the Neurasmus master's in Berlin to a Marie Curie PhD in bioprinting at Poietis.</p>
+          <div class="foot"><span class="mono">Cohort 2018–2020</span><a class="squiggle" href="https://www.neurasmus.u-bordeaux.fr/student-life/students-alumni/cohort-2018-2020/">Read</a></div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span class="mono">© 2026 Deepshika Arasu</span>
+    <span class="mono">Paintings and micrographs by the author</span>
+  </footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/datamaps/0.5.9/datamaps.world.min.js"></script>
+<script>
+(function () {
+  const root = document.documentElement;
+  function token(name) { return getComputedStyle(root).getPropertyValue(name).trim(); }
+
+  /* ---------- generated neuron line drawings ---------- */
+  function rng(seed) { let s = seed >>> 0; return function () { s = (s * 1664525 + 1013904223) >>> 0; return s / 4294967296; }; }
+  function drawNeuron(c) {
+    const r = c.getBoundingClientRect();
+    if (!r.width || !r.height) return;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const w = r.width, h = r.height;
+    c.width = Math.round(w * dpr); c.height = Math.round(h * dpr);
+    const x = c.getContext('2d');
+    x.setTransform(dpr, 0, 0, dpr, 0, 0);
+    x.clearRect(0, 0, w, h);
+    const rand = rng(+c.dataset.seed || 1);
+    const sx = (+c.dataset.sx || 0.5) * w, sy = (+c.dataset.sy || 0.5) * h;
+    const reach = (+c.dataset.reach || 0.5) * Math.max(w, h);
+    const alpha = c.dataset.alpha === 'art' ? parseFloat(token('--art-alpha')) || 0.22 : 0.85;
+    const stroke = token('--aub'), soma = token('--saffron');
+    x.globalAlpha = alpha; x.strokeStyle = stroke; x.lineCap = 'round'; x.lineJoin = 'round';
+
+    function branch(px, py, ang, len, width, depth) {
+      const steps = 6;
+      let cx = px, cy = py;
+      x.lineWidth = width;
+      x.beginPath(); x.moveTo(cx, cy);
+      for (let i = 0; i < steps; i++) {
+        ang += (rand() - 0.5) * 0.45;
+        cx += Math.cos(ang) * len / steps; cy += Math.sin(ang) * len / steps;
+        x.lineTo(cx, cy);
+      }
+      x.stroke();
+      if (depth > 0) {
+        const kids = rand() > 0.3 ? 2 : 3;
+        for (let k = 0; k < kids; k++) {
+          const spread = (k - (kids - 1) / 2) * (0.5 + rand() * 0.4);
+          branch(cx, cy, ang + spread, len * (0.62 + rand() * 0.15), Math.max(0.6, width * 0.66), depth - 1);
+        }
+      } else if (rand() > 0.5) {
+        x.fillStyle = stroke; x.beginPath(); x.arc(cx, cy, 1.4, 0, Math.PI * 2); x.fill();
+      }
+    }
+    const dendrites = 6 + Math.floor(rand() * 3);
+    for (let i = 0; i < dendrites; i++) {
+      const ang = (i / dendrites) * Math.PI * 2 + rand() * 0.6;
+      branch(sx, sy, ang, reach * (0.22 + rand() * 0.12), 2.4, 3 + (rand() > 0.6 ? 1 : 0));
+    }
+    // a long axon
+    branch(sx, sy, rand() * Math.PI * 2, reach * 0.6, 1.6, 1);
+    x.globalAlpha = Math.min(1, alpha + 0.5);
+    x.fillStyle = soma;
+    x.beginPath(); x.ellipse(sx, sy, 11, 9, rand() * Math.PI, 0, Math.PI * 2); x.fill();
+  }
+  function allNeurons() { document.querySelectorAll('canvas.neuron').forEach(drawNeuron); }
+  let rt; window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(allNeurons, 150); });
+  try { window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', allNeurons); } catch (e) {}
+  new MutationObserver(allNeurons).observe(root, { attributes: true, attributeFilter: ['data-theme'] });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(allNeurons);
+
+  /* ---------- images: fall back to the placeholder underneath when a file is missing ---------- */
+  document.querySelectorAll('.logo img, img.opt').forEach(function (img) {
+    const drop = function () { img.remove(); };
+    if (img.complete && img.naturalWidth === 0) drop(); else img.addEventListener('error', drop);
+  });
+
+  /* ---------- copy email ---------- */
+  const btn = document.getElementById('copy-email');
+  const email = document.getElementById('email');
+  btn.addEventListener('click', function () {
+    const done = function () { btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = 'Copy address'; }, 1600); };
+    const fallback = function () { const s = window.getSelection(); const rg = document.createRange(); rg.selectNodeContents(email); s.removeAllRanges(); s.addRange(rg); btn.textContent = 'Selected, press Ctrl+C'; };
+    try { navigator.clipboard.writeText(email.textContent.trim()).then(done, fallback); } catch (e) { fallback(); }
+  });
+
+  /* ---------- places (edit this list to add countries) ---------- */
+  const PLACES = [
+    { iso: 'FRA', num: '250', name: 'France', color: '--aub', years: '2021 →', where: 'INRAE Narbonne, INSERM Bordeaux, Poietis', cities: [['Narbonne', 3.0, 43.18, 'end', 0], ['Bordeaux', -0.58, 44.84, 'end', 0]] },
+    { iso: 'ESP', num: '724', name: 'Spain', color: '--saffron', years: '2021 – 2025', where: 'PhD, University of Barcelona', cities: [['Barcelona', 2.17, 41.39, 'start', 6]] },
+    { iso: 'NLD', num: '528', name: 'Netherlands', color: '--aub-soft', years: '2020', where: 'M.Sc. research, VU Amsterdam', cities: [['Amsterdam', 4.9, 52.37, 'start', -4]] },
+    { iso: 'DEU', num: '276', name: 'Germany', color: '--saffron', years: '2018 – 2019', where: 'M.Sc. research, Charité Berlin', cities: [['Berlin', 13.4, 52.52, 'start', 0]] },
+    { iso: 'USA', num: '840', name: 'United States', color: '--aub-soft', years: '2017', where: 'Khorana Scholar, Caltech', cities: [['Pasadena', -118.14, 34.15, 'start', 0]] },
+    { iso: 'IND', num: '356', name: 'India', color: '--aub', years: '2014 – 2018', where: 'B.Tech., NIT Warangal', cities: [['Warangal', 79.59, 17.97, 'start', 0]] }
+  ];
+
+  const list = document.getElementById('places');
+  PLACES.forEach(function (p) {
+    const li = document.createElement('li');
+    li.innerHTML = '<button type="button" data-key="' + p.iso + '"><span class="dot"></span><span><span class="country"></span><span class="where"></span></span><span class="yrs"></span></button>';
+    li.querySelector('.dot').style.background = 'var(' + p.color + ')';
+    li.querySelector('.country').textContent = p.name;
+    li.querySelector('.where').textContent = p.where;
+    li.querySelector('.yrs').textContent = p.years;
+    list.appendChild(li);
+  });
+  function setFocus(key) {
+    document.querySelectorAll('.hl-c').forEach(function (el) { el.classList.toggle('focus', el.dataset.key === key); });
+    list.querySelectorAll('button').forEach(function (b) { b.classList.toggle('focus', b.dataset.key === key); });
+  }
+  list.addEventListener('mouseover', function (e) { const b = e.target.closest('button'); if (b) setFocus(b.dataset.key); });
+  list.addEventListener('focusin', function (e) { const b = e.target.closest('button'); if (b) setFocus(b.dataset.key); });
+  list.addEventListener('mouseleave', function () { setFocus(null); });
+
+  function loadTopo() {
+    const dm = window.Datamap && window.Datamap.prototype && window.Datamap.prototype.worldTopo;
+    if (dm && typeof dm === 'object' && dm.objects) return Promise.resolve({ topo: dm, obj: Object.keys(dm.objects)[0], idKey: 'iso' });
+    return fetch('https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-110m.json')
+      .then(function (r) { if (!r.ok) throw new Error('map'); return r.json(); })
+      .then(function (t) { return { topo: t, obj: 'countries', idKey: 'num' }; });
+  }
+  function drawMap(svgEl, features, proj, idKey, labels) {
+    const svg = d3.select(svgEl);
+    const path = d3.geoPath(proj);
+    svg.append('g').selectAll('path').data(features).join('path').attr('class', 'land').attr('d', path);
+    const hl = svg.append('g').attr('filter', 'url(#paint)');
+    PLACES.forEach(function (p) {
+      const f = features.find(function (ft) { return String(ft.id) === p[idKey]; });
+      if (!f) return;
+      hl.append('path').attr('class', 'hl-c').attr('d', path(f)).attr('data-key', p.iso)
+        .style('fill', 'var(' + p.color + ')').style('stroke', 'var(' + p.color + ')')
+        .on('mouseenter', function () { setFocus(p.iso); }).on('mouseleave', function () { setFocus(null); })
+        .append('title').text(p.name + ': ' + p.where);
+    });
+    const cities = svg.append('g');
+    PLACES.forEach(function (p) {
+      p.cities.forEach(function (c) {
+        const xy = proj([c[1], c[2]]);
+        if (!xy) return;
+        cities.append('circle').attr('class', 'city').attr('cx', xy[0]).attr('cy', xy[1]).attr('r', labels ? 4.5 : 3);
+        if (labels) {
+          const dx = c[3] === 'end' ? -9 : 9;
+          cities.append('text').attr('class', 'city-label').attr('x', xy[0] + dx).attr('y', xy[1] + 4 + c[4]).attr('text-anchor', c[3]).text(c[0]);
+        }
+      });
+    });
+  }
+  let mapDone = false;
+  function buildMap() {
+    if (mapDone) return; mapDone = true;
+    const fail = function () {
+      document.getElementById('map-msg').hidden = false;
+      document.getElementById('world').hidden = true;
+      document.getElementById('europe').hidden = true;
+    };
+    if (!window.d3 || !window.topojson) { fail(); return; }
+    loadTopo().then(function (res) {
+      const features = topojson.feature(res.topo, res.topo.objects[res.obj]).features
+        .filter(function (f) { return String(f.id) !== 'ATA' && String(f.id) !== '010'; });
+      const world = d3.geoNaturalEarth1().fitExtent([[8, 8], [952, 462]], { type: 'FeatureCollection', features: features });
+      drawMap(document.querySelector('#world svg'), features, world, res.idKey, false);
+      const eu = d3.geoMercator().fitExtent([[10, 10], [590, 470]], { type: 'MultiPoint', coordinates: [[-9.5, 36], [21, 56.5]] }).clipExtent([[0, 0], [600, 480]]);
+      drawMap(document.querySelector('#europe svg'), features, eu, res.idKey, true);
+    }).catch(fail);
+  }
+
+  /* ---------- views: home, #map, #press ---------- */
+  const views = { home: document.getElementById('view-home'), map: document.getElementById('view-map'), press: document.getElementById('view-press') };
+  function route() {
+    const h = location.hash.slice(1);
+    const view = views[h] && h !== 'home' ? h : 'home';
+    Object.keys(views).forEach(function (k) { views[k].hidden = k !== view; });
+    document.querySelectorAll('nav a.tab').forEach(function (a) {
+      if (a.getAttribute('href') === '#' + view) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+    });
+    if (view === 'map') buildMap();
+    if (view !== 'home') window.scrollTo(0, 0);
+    else {
+      allNeurons();
+      const el = h && document.getElementById(h);
+      if (el) el.scrollIntoView();
+    }
+  }
+  window.addEventListener('hashchange', route);
+  route();
+})();
+</script>
+</body>
+</html>
